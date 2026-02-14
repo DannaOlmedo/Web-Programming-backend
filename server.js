@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conexión MongoDB
-const DEV_DB = "mongodb://localhost:27017")
+const DEV_DB = "mongodb://localhost:27017";
 mongoose.connect((process.env.DB_URL || DEV_DB ) + "/Plataforma1")
   .then(() => console.log("MongoDB conectado"))
   .catch(err => console.log("Error MongoDB:", err));

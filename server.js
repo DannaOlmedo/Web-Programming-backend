@@ -23,7 +23,6 @@ app.use(express.json());
 // Conexión MongoDB
 const DEV_DB = "mongodb://localhost:27017";
 const DB_URL = (process.env.DB_URL || DEV_DB);
-console.log("Conectando a MongoDB en:", DB_URL);
 mongoose.connect(DB_URL)
   .then(() => console.log("MongoDB conectado"))
   .catch(err => console.log("Error MongoDB -----------------:", err));

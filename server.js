@@ -22,9 +22,11 @@ app.use(express.json());
 
 // Conexión MongoDB
 const DEV_DB = "mongodb://localhost:27017";
-mongoose.connect((process.env.DB_URL || DEV_DB ) + "/Plataforma1")
+const DB_URL = process.env.DB_URL || DEV_DB;
+console.log("Conectando a MongoDB en:", DB_URL);
+mongoose.connect(DB_URL + "/Plataforma1")
   .then(() => console.log("MongoDB conectado"))
-  .catch(err => console.log("Error MongoDB:", err));
+  .catch(err => console.log("Error MongoDB -----------------:", err));
 
 // Importar rutas
 const reporteRoutes = require("./routes/reporte.routes");

@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
   console.log("Usuario conectado");
 });
 
-const PORT = 80;
+const PORT = 8080;
 
 server.listen(PORT, () => {
   console.log(`Servidor en puerto ${PORT}`);
